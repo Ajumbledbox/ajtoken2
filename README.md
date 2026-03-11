@@ -142,7 +142,7 @@ If you find AJToken2 useful, consider supporting its development. Donations are 
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-☕-blue)](https://ko-fi.com/ajumbledbox)
 
 ### Crypto Donations
-All crypto donations go directly to a personal Exodus wallet — no middleman, no fees.
+All crypto donations go directly to a personal wallet — no middleman, no fees.
 
 | Asset | Network | Address |
 |---|---|---|
