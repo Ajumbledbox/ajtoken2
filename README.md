@@ -135,16 +135,16 @@ This software is licensed for personal, non-commercial use only. Redistribution,
 
 ## Support This Project
 
-If you find AJToken2 useful, consider supporting its development. Donation options including cryptocurrency and fiat payment methods are currently being set up.
+If you find AJToken2 useful, consider supporting its development. Donations are appreciated and help keep the project going.
 
-Check back soon for direct donation links, or reach out via GitHub to express interest in supporting the project.
+[![PayPal](https://img.shields.io/badge/Donate-PayPal-blue)](https://paypal.me/thetinkeringtoad)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-☕-blue)](https://ko-fi.com/ajumbledbox)
+
+More donation options coming soon including GitHub Sponsors and cryptocurrency.
 
 <!--
-Uncomment and update when donation links are ready:
-
+Uncomment when ready:
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-♥-ea4aaa)](https://github.com/sponsors/thetinkeringtoad)
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-☕-yellow)](https://buymeacoffee.com/thetinkeringtoad)
-[![Ko-fi](https://img.shields.io/badge/Ko--fi-☕-blue)](https://ko-fi.com/thetinkeringtoad)
 -->
 
 ---
