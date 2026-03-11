@@ -137,10 +137,24 @@ This software is licensed for personal, non-commercial use only. Redistribution,
 
 If you find AJToken2 useful, consider supporting its development. Donations are appreciated and help keep the project going.
 
+### Fiat Donations
 [![PayPal](https://img.shields.io/badge/Donate-PayPal-blue)](https://paypal.me/thetinkeringtoad)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-☕-blue)](https://ko-fi.com/ajumbledbox)
 
-More donation options coming soon including GitHub Sponsors and cryptocurrency.
+### Crypto Donations
+All crypto donations go directly to a personal Exodus wallet — no middleman, no fees.
+
+| Asset | Network | Address |
+|---|---|---|
+| BTC | Bitcoin | `bc1q8tct3jc3v7ankrwsscl4ne6u7vx7uvd6yrc06f` |
+| ETH | Ethereum | `0xA084AdDe9D97fc583B4ACc4Da6a132B36a563eCe` |
+| SOL | Solana | `6eYC7zSaEpE6W15FWJwhnBqwxUbF8EKPEmHGzqkzroG8` |
+| XRP | XRP Ledger | `rJ7xCRV5fJv7fhbHaMUtAFBDwee3k3YRDc` |
+| USDC | Solana | `6eYC7zSaEpE6W15FWJwhnBqwxUbF8EKPEmHGzqkzroG8` |
+| DOGE | Dogecoin | `DNWe2Xx89fsdBbXSjGFEj3cTjUGeJUzpiC` |
+| LTC | Litecoin | `LMb1gPvkeFvoLznGTnA6fT3usHPABDnNcd` |
+
+More donation options coming soon including GitHub Sponsors.
 
 <!--
 Uncomment when ready:
