@@ -141,6 +141,14 @@ If you find AJToken2 useful, consider supporting its development. Donations are 
 [![PayPal](https://img.shields.io/badge/Donate-PayPal-blue)](https://paypal.me/thetinkeringtoad)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-☕-blue)](https://ko-fi.com/ajumbledbox)
 
+**Support via Stripe — quick and easy, no account needed:**
+
+| Amount | Link |
+|---|---|
+| ☕ Tip $2 | [Buy me a coffee](https://buy.stripe.com/cNi9AMf71fDjdfq7xe7wA00) |
+| 🍕 Snacks $5 | [Buy me a snack](https://buy.stripe.com/bJe4gsaQLfDj3EQ6ta7wA01) |
+| 🚀 Support $25 | [Support the projects](https://buy.stripe.com/8x26oA2kf0Ip1wI2cU7wA02) |
+
 ### Crypto Donations
 All crypto donations go directly to a personal wallet — no middleman, no fees.
 
