@@ -2,13 +2,17 @@
 
 **© 2025-2026 Ajumbledbox. All rights reserved.**
 
-A comprehensive cryptocurrency tax tracking and portfolio analysis toolkit built for Canadian investors. AJToken2 combines a full-featured desktop application with a standalone command-line tool to handle everything from CRA-compliant tax reporting to real-time FIFO lot tracking.
+A comprehensive cryptocurrency tax tracking and portfolio analysis toolkit built for Canadian investors. AJToken2 combines a full-featured desktop application with a standalone command-line tools available in the AJToken2 MiniKit to handle everything from CRA-compliant tax reporting to real-time FIFO lot tracking.
 
 > **⚠ Important Notice:** While AJToken2 is designed to follow CRA (Canada Revenue Agency) rules for capital gains, adjusted cost base, and superficial loss tracking, **accuracy is not guaranteed**. Cryptocurrency tax rules are complex and subject to change. All output from this toolkit — including CRA line calculations, ACB values, lot tracking, and P/L figures — must be independently verified by the user before filing. This software is a supporting tool, not a substitute for professional tax advice. **You are solely responsible for the accuracy of your tax filings.**
 
 ---
 
-## Two Tools, One Toolkit
+## AJToken2 Desktop & MiniKit Companion Tools 
+> **Looking for the full application?**
+> The complete AJToken2 desktop app with full CRA tax reporting, ACB
+> calculations, lot tracking, and portfolio management is available at:
+> **[github.com/Ajumbledbox/Ajtoken2-minikit](https://github.com/Ajumbledbox/Ajtoken2-minikit)**
 
 ### AJToken2 Desktop — Tax Reporting & Portfolio Management
 
@@ -40,9 +44,9 @@ A portable Windows desktop application (Tauri + React + DuckDB) that imports you
 
 ---
 
-### AJToken2 FIFO Lot Tracker — Command-Line Portfolio Pricing
-
-A standalone Python script that reads your Coinbase CSV export and traces original purchase dollars (CAD) through every transaction using FIFO (First In, First Out) lot accounting. Reports what your remaining holdings actually cost you — with live market prices for instant P/L visibility.
+### AJToken2-minikit
+Standalone tools > **[github.com/Ajumbledbox/Ajtoken2-minikit](https://github.com/Ajumbledbox/Ajtoken2-minikit)**
+Each with there own strengths for the complete view Ajtoken2 application is the all in one better choice
 
 **Key Features**
 - **FIFO Lot Tracking** — Every buy creates a lot. Every sell consumes the oldest lots first. Remaining lots show exactly what you paid (fee-inclusive CAD)
