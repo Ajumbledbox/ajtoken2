@@ -6,11 +6,50 @@ A comprehensive cryptocurrency tax tracking and portfolio analysis toolkit built
 
 > **⚠ Important Notice:** While AJToken2 is designed to follow CRA (Canada Revenue Agency) rules for capital gains, adjusted cost base, and superficial loss tracking, **accuracy is not guaranteed**. Cryptocurrency tax rules are complex and subject to change. All output from this toolkit — including CRA line calculations, ACB values, lot tracking, and P/L figures — must be independently verified by the user before filing. This software is a supporting tool, not a substitute for professional tax advice. **You are solely responsible for the accuracy of your tax filings.**
 
+> **Platform:** Windows 10/11 only at this time. Support for other platforms is being considered for future releases.
+
+<!-- Screenshots coming soon -->
+
+---
+
+## How to Install
+
+1. Download the latest installer (`ajtoken2.pr.v*.exe`) from the [Releases](https://github.com/Ajumbledbox/ajtoken2/releases) page
+2. Run the installer and choose a folder (the path cannot contain spaces — use underscores, e.g. `C:\AJToken2`)
+3. The installer will check for required dependencies (WebView2 Runtime, VC++ Runtime) and install them automatically if needed
+4. Once installed, open the folder and double-click **app.exe** to launch
+5. To remove the application completely, just delete the install folder — no registry entries, no system files, no leftover data
+
+## First Run — Setup Wizard
+
+On first launch the Setup Wizard walks you through initial configuration:
+
+1. **Run Mode** — Choose Demo mode (sample data for testing not provided) or Normal mode (your real data)
+2. **Admin Setup** — Create an admin name and passkey to protect import, reset, and configuration features
+3. **CSV Import** — Import your Coinbase account statement CSV (see below)
+	a. ** Getting Your Coinbase CSV**
+AJToken2 reads the **Coinbase account statement** CSV — this is the file from your account's **Manage Account** section, not the transaction history export.
+	b. Log into your Coinbase account
+	c. Go to **Settings** → **Manage Account** (or the account statements area)
+	d. Download your account statement as a CSV file
+	e. Use this file when the Setup Wizard prompts for import
+		**This CSV is the only data source the application uses. Other exchanges are not supported at this time.**
+	f. After you import the CSV you need to click the **Run Pre-Check and Import** button. This reviews the CSV and processes the import of the CSV.
+4. Send Classification This is a two part understanding
+	a. If during the integrity check no Send transactions are detected this will proceed to the final step press the **Complete Setup** button.
+	b. — If your Coinbase CSV contains Send transactions, the application will ask you to classify each one before proceeding. A Send can be either an Internal Transfer 
+		(moving	crypto between your own wallets — not a taxable event) or an External Transfer (sending crypto to someone else — a taxable disposition). The CRA treats these very differently. Internal transfers have no tax impact, while external transfers trigger a capital gain or loss.
+		The application requires this classification so it can correctly calculate your adjusted cost base, capital gains, and all CRA line values. Misclassifying a Send will produce incorrect tax figures throughout the application.
+	c. You can not skip classifying the application will not proceed to the next step till this is done. Once all if any transactions are classified press the **Complete Setup** button to proceed.
+After setup the application opens directly to the dashboard on every subsequent launch. You must press the refresh button everytime you enter the application.
+
+
+
 ---
 
 ## AJToken2 Desktop — Tax Reporting & Portfolio Management
 
-A portable Windows desktop application (Tauri + React + DuckDB) that imports your Coinbase CSV and provides complete tax preparation support for CRA filing.
+A Windows desktop application (Tauri + React + DuckDB) that imports your Coinbase CSV and provides complete tax preparation support for CRA filing.
 
 ### Tax Tab — CRA Schedule 3 / T1 General
 - **Line 13199** — Proceeds of disposition
@@ -31,20 +70,26 @@ A portable Windows desktop application (Tauri + React + DuckDB) that imports you
 - **Planning & Alerts** — Tax optimization insights and scenario planning
 
 ### Platform & Security
-- Portable, no-install Windows application — delete the folder to remove completely
+- Windows 10/11 — other platforms under consideration
 - Passkey and two-factor authentication (TOTP) for admin access
 - Embedded DuckDB database — your data stays local, no cloud dependency
 - Live pricing from Coinbase public API (no API key required)
 - Setup wizard with guided CSV import, send classification, and run mode selection
+- Delete the install folder to remove completely — nothing left behind
 
 ---
 
 ## AJToken2 MiniKit — Standalone Companion Tools
 
-Lightweight command-line tools that work independently from the desktop app — no installation required, just download and run.
+Lightweight standalone tools that work independently from the desktop app — no installation required, just download and run.
 
-> **Looking for the standalone tools?**
-> The AJToken2 MiniKit with standalone CRA tax packet generation and FIFO lot tracking is available at:
+**Currently available:**
+- **CRA Tax Packet Generator** — Reads your Coinbase CSV and produces CRA-compliant Schedule 3 / T1 output files with a transaction-level math trail. Self-contained executable, no dependencies.
+
+**Coming soon:**
+- **Current Pricing Tool** — FIFO lot tracking with live CoinMarketCap prices, realized/unrealized P/L, break-even analysis, CSV comparison mode, and Excel workbook export.
+
+> **Download the standalone tools at:**
 > **[github.com/Ajumbledbox/Ajtoken2-minikit](https://github.com/Ajumbledbox/Ajtoken2-minikit)**
 
 ---
