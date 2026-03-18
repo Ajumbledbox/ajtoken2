@@ -20,30 +20,30 @@ A comprehensive cryptocurrency tax tracking and portfolio analysis toolkit built
 4. Once installed, open the folder and double-click **app.exe** to launch
 5. To remove the application completely, just delete the install folder — no registry entries, no system files, no leftover data
 
+---
+
 ## First Run — Setup Wizard
 
 On first launch the Setup Wizard walks you through initial configuration:
 
-1. **Run Mode** — Choose Demo mode (sample data for testing not provided) or Normal mode (your real data)
+1. **Run Mode** — Choose Demo mode (sample data for testing) or Normal mode (your real data)
+
 2. **Admin Setup** — Create an admin name and passkey to protect import, reset, and configuration features
 3. **CSV Import** — Import your Coinbase account statement CSV (see below)
-	a. ** Getting Your Coinbase CSV**
-AJToken2 reads the **Coinbase account statement** CSV — this is the file from your account's **Manage Account** section, not the transaction history export.
-	b. Log into your Coinbase account
-	c. Go to **Settings** → **Manage Account** (or the account statements area)
-	d. Download your account statement as a CSV file
-	e. Use this file when the Setup Wizard prompts for import
-		**This CSV is the only data source the application uses. Other exchanges are not supported at this time.**
-	f. After you import the CSV you need to click the **Run Pre-Check and Import** button. This reviews the CSV and processes the import of the CSV.
-4. Send Classification This is a two part understanding
-	a. If during the integrity check no Send transactions are detected this will proceed to the final step press the **Complete Setup** button.
-	b. — If your Coinbase CSV contains Send transactions, the application will ask you to classify each one before proceeding. A Send can be either an Internal Transfer 
-		(moving	crypto between your own wallets — not a taxable event) or an External Transfer (sending crypto to someone else — a taxable disposition). The CRA treats these very differently. Internal transfers have no tax impact, while external transfers trigger a capital gain or loss.
-		The application requires this classification so it can correctly calculate your adjusted cost base, capital gains, and all CRA line values. Misclassifying a Send will produce incorrect tax figures throughout the application.
-	c. You can not skip classifying the application will not proceed to the next step till this is done. Once all if any transactions are classified press the **Complete Setup** button to proceed.
+   - ** Getting Your Coinbase CSV**
+   - AJToken2 reads the **Coinbase account statement** CSV — this is the file from your account's **Manage Account** section, not the transaction history export.   - Log into your Coinbase account
+   - Go to **Settings** → **Manage Account** (or the account statements area)
+   - Download your account statement as a CSV file
+   - Use this file when the Setup Wizard prompts for import
+   - **This CSV is the only data source the application uses. Other exchanges are not supported at this time.**
+   - After you import the CSV you need to click the **Run Pre-Check and Import** button. This reviews the CSV and processes the import of the CSV.
+4. **Send Classification This is a two part understanding**
+   - If during the integrity check no Send transactions are detected this will proceed to the final step press the **Complete Setup** button.
+   - If your Coinbase CSV contains Send transactions, the application will ask you to classify each one before proceeding. A Send can be either an Internal Transfer 
+   - (moving crypto between your own wallets — not a taxable event) or an External Transfer (sending crypto to someone else — a taxable disposition). The CRA treats these very differently. Internal transfers have no tax impact, while external transfers trigger a capital gain or loss.
+   - The application requires this classification so it can correctly calculate your adjusted cost base, capital gains, and all CRA line values. Misclassifying a Send will produce incorrect tax figures throughout the application.
+   - You can not skip classifying the application will not proceed to the next step till this is done. Once all if any transactions are classified press the **Complete Setup** button to proceed.
 After setup the application opens directly to the dashboard on every subsequent launch. You must press the refresh button everytime you enter the application.
-
-
 
 ---
 
