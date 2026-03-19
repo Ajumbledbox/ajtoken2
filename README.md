@@ -26,12 +26,12 @@ A comprehensive cryptocurrency tax tracking and portfolio analysis toolkit built
 
 On first launch the Setup Wizard walks you through initial configuration:
 
-1. **Run Mode** — Choose Demo mode (sample data for testing) or Normal mode (your real data)
-
+1. **Run Mode** — Choose Demo mode (sample data for testing not provided) or Normal mode (your real data)
 2. **Admin Setup** — Create an admin name and passkey to protect import, reset, and configuration features
 3. **CSV Import** — Import your Coinbase account statement CSV (see below)
    - ** Getting Your Coinbase CSV**
-   - AJToken2 reads the **Coinbase account statement** CSV — this is the file from your account's **Manage Account** section, not the transaction history export.   - Log into your Coinbase account
+   - AJToken2 reads the **Coinbase account statement** CSV — this is the file from your account's **Manage Account** section, not the transaction history export.
+   - Log into your Coinbase account
    - Go to **Settings** → **Manage Account** (or the account statements area)
    - Download your account statement as a CSV file
    - Use this file when the Setup Wizard prompts for import
@@ -149,4 +149,4 @@ Uncomment when ready:
 
 ---
 
-**© 2025-2026 Ajumbledbox. All rights reserved.**
+**© 2013-2026 Ajumbledbox. All rights reserved.**
