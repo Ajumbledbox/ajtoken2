@@ -1,6 +1,6 @@
 # AJToken2 — Canadian Crypto Tax Toolkit
 
-**© 2025-2026 Ajumbledbox. All rights reserved.**
+**© 2013-2026 Ajumbledbox (David Groeling). All rights reserved.**
 
 A comprehensive cryptocurrency tax tracking and portfolio analysis toolkit built for Canadian investors. AJToken2 is a full-featured desktop application that handles CRA-compliant tax reporting, ACB calculations, lot tracking, and portfolio management — all running locally on your machine.
 
@@ -17,7 +17,7 @@ A comprehensive cryptocurrency tax tracking and portfolio analysis toolkit built
 1. Download the latest installer (`ajtoken2.pr.v*.exe`) from the [Releases](https://github.com/Ajumbledbox/ajtoken2/releases) page
 2. Run the installer and choose a folder (the path cannot contain spaces — use underscores, e.g. `C:\AJToken2`)
 3. The installer will check for required dependencies (WebView2 Runtime, VC++ Runtime) and install them automatically if needed
-4. Once installed, open the folder and double-click **app.exe** to launch
+4. Once installed, open the folder and double-click **AJToken2.exe** to launch
 5. To remove the application completely, just delete the install folder — no registry entries, no system files, no leftover data
 
 ---
@@ -26,30 +26,30 @@ A comprehensive cryptocurrency tax tracking and portfolio analysis toolkit built
 
 On first launch the Setup Wizard walks you through initial configuration:
 
-1. **Run Mode** — Choose Demo mode (sample data for testing not provided) or Normal mode (your real data)
+1. **Run Mode** — Choose Demo mode or Normal mode (your real data)
 2. **Admin Setup** — Create an admin name and passkey to protect import, reset, and configuration features
 3. **CSV Import** — Import your Coinbase account statement CSV (see below)
-   - ** Getting Your Coinbase CSV**
+   - **Getting Your Coinbase CSV**
    - AJToken2 reads the **Coinbase account statement** CSV — this is the file from your account's **Manage Account** section, not the transaction history export.
    - Log into your Coinbase account
    - Go to **Settings** → **Manage Account** (or the account statements area)
    - Download your account statement as a CSV file
    - Use this file when the Setup Wizard prompts for import
    - **This CSV is the only data source the application uses. Other exchanges are not supported at this time.**
-   - After you import the CSV you need to click the **Run Pre-Check and Import** button. This reviews the CSV and processes the import of the CSV.
-4. **Send Classification This is a two part understanding**
-   - If during the integrity check no Send transactions are detected this will proceed to the final step press the **Complete Setup** button.
-   - If your Coinbase CSV contains Send transactions, the application will ask you to classify each one before proceeding. A Send can be either an Internal Transfer 
-   - (moving crypto between your own wallets — not a taxable event) or an External Transfer (sending crypto to someone else — a taxable disposition). The CRA treats these very differently. Internal transfers have no tax impact, while external transfers trigger a capital gain or loss.
+   - After you import the CSV click the **Run Pre-Check and Import** button. This reviews the CSV and processes the import.
+4. **Send Classification — This is a two part understanding**
+   - If during the integrity check no Send transactions are detected, this will proceed to the final step — press the **Complete Setup** button.
+   - If your Coinbase CSV contains Send transactions, the application will ask you to classify each one before proceeding. A Send can be either an Internal Transfer (moving crypto between your own wallets — not a taxable event) or an External Transfer (sending crypto to someone else — a taxable disposition). The CRA treats these very differently. Internal transfers have no tax impact, while external transfers trigger a capital gain or loss.
    - The application requires this classification so it can correctly calculate your adjusted cost base, capital gains, and all CRA line values. Misclassifying a Send will produce incorrect tax figures throughout the application.
-   - You can not skip classifying the application will not proceed to the next step till this is done. Once all if any transactions are classified press the **Complete Setup** button to proceed.
-After setup the application opens directly to the dashboard on every subsequent launch. You must press the refresh button everytime you enter the application.
+   - You cannot skip classifying — the application will not proceed until all transactions are classified. Once done, press the **Complete Setup** button to proceed.
+
+After setup the application opens directly to the dashboard on every subsequent launch. Press the refresh button to update pricing.
 
 ---
 
 ## AJToken2 Desktop — Tax Reporting & Portfolio Management
 
-A Windows desktop application (Tauri + React + DuckDB) that imports your Coinbase CSV and provides complete tax preparation support for CRA filing.
+A Windows desktop application (Tauri + React + DuckDB + Rust) that imports your Coinbase CSV and provides complete tax preparation support for CRA filing. The application runs entirely locally — no Node.js, no external runtime, and all data stays on your machine.
 
 ### Tax Tab — CRA Schedule 3 / T1 General
 - **Line 13199** — Proceeds of disposition
@@ -58,24 +58,26 @@ A Windows desktop application (Tauri + React + DuckDB) that imports your Coinbas
 - **Line 13299** — Net capital gain/loss
 - **Line 12700** — Taxable capital gains (50% inclusion rate)
 - Other investment income tracking: staking, airdrops, Coinbase Earn, promotional rewards (Schedule 4 Part II — T1 line 12100)
-- Print and Word (.docx) export for tax documentation
+- Print, CSV, and XLSX export for tax documentation
 
 ### Dashboard Views
-- **Open Inventory** — Current holdings with FIFO cost basis, market value, unrealized/realized/total P/L, and live price updates
-- **Closed Inventory** — Complete history of disposed positions with realized P/L
-- **Lots** — Individual lot-level tracking of every acquisition and its cost basis
-- **Transaction History** — Full buy/sell/transfer/convert activity across all tokens
-- **Superficial Loss Recovery** — Tracks CRA superficial loss rules with 30-day windows, active locks, and recovery status
-- **Supplemental Transactions** — Manual entry for transactions not captured in CSV import
-- **Planning & Alerts** — Tax optimization insights and scenario planning
+- **Open Inventory** — Current holdings with ACB per unit, market value, unrealized/realized/total P/L, and live price updates
+- **Disposed Inventory** — Complete history of fully disposed positions with realized P/L
+- **Supplemental Transactions** — Manual entry for transactions and adjustments not captured in the CSV import
+- **Lots** — Individual lot-level tracking of every acquisition, its cost basis, and how partial disposals are carried
+- **Taxes** — A summary by year table then each individual year with its own display options. The View Math button is where it all comes into focus
+- **Token Transaction History** — Full buy/sell/transfer/convert activity for a selected asset with running quantity and P/L context
+- **Superficial Recovery** — Tracks CRA superficial loss rules with 30-day windows, active locks, and recovery status
+- **Planning & Alerts** — Tax optimization insights, stale pricing warnings, pending classification flags, and superficial loss timing concerns
+- **Documentaion** — A live in app view of all documents in the /docs folder. You can add and subtract files just by changing the files in the folder its a live environment.
+
 
 ### Platform & Security
 - Windows 10/11 — other platforms under consideration
 - Passkey and two-factor authentication (TOTP) for admin access
 - Embedded DuckDB database — your data stays local, no cloud dependency
-- Live pricing from Coinbase public API (no API key required)
-- Setup wizard with guided CSV import, send classification, and run mode selection
-- Delete the install folder to remove completely — nothing left behind
+- Live pricing from Coinbase public API (no API key required) - You can change the API in admin.
+- You can use the uninstall file or you should just need to delete the install folder to remove completely — nothing left behind.
 
 ---
 
@@ -105,31 +107,23 @@ Lightweight standalone tools that work independently from the desktop app — no
 
 ## Beyond Canada — International Use
 
-While AJToken2 is built around Canadian CRA requirements, the core 
-methodology applies to any investor who tracks crypto using weighted 
-average cost basis (ACB) — a method used in the UK, Australia, and 
-many other countries.
+While AJToken2 is built around Canadian CRA requirements, the core methodology applies to any investor who tracks crypto using weighted average cost basis (ACB) — a method used in the UK, Australia, and many other countries.
 
-The full desktop application includes built-in FIFO lot tracking and 
-complete transaction history alongside the ACB calculations — giving 
-any crypto investor accurate cost basis tracking and P&L visibility 
-regardless of their tax jurisdiction.
+The full desktop application includes built-in FIFO lot tracking and complete transaction history alongside the ACB calculations — giving any crypto investor accurate cost basis tracking and P&L visibility regardless of their tax jurisdiction.
 
-The MiniKit companion tools extend this further with standalone 
-portfolio pricing and CRA tax packet generation for users who want 
-lightweight tools without the full application.
+The MiniKit companion tools extend this further with standalone portfolio pricing and CRA tax packet generation for users who want lightweight tools without the full application.
 
-If you hold crypto on Coinbase and want accurate cost basis tracking 
-and P&L visibility — wherever you are — AJToken2 provides a solid 
-free foundation.
+If you hold crypto on Coinbase and want accurate cost basis tracking and P&L visibility — wherever you are — AJToken2 provides a solid free foundation.
 
 ---
 
 ## Important Disclaimers
 
-This software is provided **"AS IS"** without warranty of any kind, express or implied. It does not constitute financial, tax, or legal advice. Users are solely responsible for verifying the accuracy of all output and complying with applicable tax laws and regulations. The author assumes no responsibility for decisions made based on the output of this software.
+This software is provided **"AS IS"** without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. It does not constitute financial, tax, or legal advice. Users are solely responsible for verifying the accuracy of all output and complying with applicable tax laws and regulations. The author assumes no responsibility for decisions made based on the output of this software.
 
-This software is licensed for personal, non-commercial use only. Redistribution, resale, or incorporation into commercial products is prohibited without explicit written permission from Ajumbledbox.
+This software is licensed for personal, non-commercial use only. Redistribution, resale, or incorporation into commercial products is prohibited without explicit written permission from Ajumbledbox. This agreement is governed by the laws of Ontario, Canada. For commercial licensing inquiries contact ajumbledbox@outlook.com.
+
+All primary application data remains on your local machine. Live pricing features may contact public price providers to fetch market-price data only. You are responsible for your own backups and safe storage of recovery material.
 
 ---
 
@@ -164,11 +158,6 @@ All crypto donations go directly to a personal wallet — no middleman, no fees.
 
 More donation options coming soon including GitHub Sponsors.
 
-<!--
-Uncomment when ready:
-[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-♥-ea4aaa)](https://github.com/sponsors/thetinkeringtoad)
--->
-
 ---
 
-**© 2013-2026 Ajumbledbox. All rights reserved.**
+**© 2013-2026 Ajumbledbox (David Groeling). All rights reserved.**
