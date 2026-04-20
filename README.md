@@ -16,9 +16,8 @@ A comprehensive cryptocurrency tax tracking and portfolio analysis toolkit built
 
 1. Download the latest installer (`ajtoken2.pr.v*.exe`) from the [Releases](https://github.com/Ajumbledbox/ajtoken2/releases) page
 2. Run the installer and choose a folder (the path cannot contain spaces — use underscores, e.g. `C:\AJToken2`)
-3. The installer will check for required dependencies (WebView2 Runtime, VC++ Runtime) and install them automatically if needed
-4. Once installed, open the folder and double-click **AJToken2.exe** to launch
-5. To remove the application completely, just delete the install folder — no registry entries, no system files, no leftover data
+3. Once installed, open the folder and double-click **AJToken2.exe** to launch
+4. To remove the application completely, just delete the install folder — no registry entries, no system files, no leftover data
 
 ---
 
